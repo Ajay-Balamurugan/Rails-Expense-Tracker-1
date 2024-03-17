@@ -35,7 +35,15 @@ Rails.application.routes.draw do
 
   #add category
   get "add_category", to:"categories#new"
+  post "add_category", to:"categories#create"
 
   #view category
   get "view_category", to:"categories#index"
+
+  #delete payment
+  delete "delete_category/:id", to:"categories#destroy", as: :delete_category
+
+  #update payment
+  get "edit_category/:id", to: "categories#edit", as: :edit_category
+  patch "update_category/:id", to: "categories#update", as: :update_category
 end

@@ -3,6 +3,7 @@ class PaymentsController < ApplicationController
         @payment = current_user.payments.build
     end
 
+    #method to display all payment records
     def index
         @payments = current_user.payments
     end

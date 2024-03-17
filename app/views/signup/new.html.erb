@@ -1,3 +1,4 @@
+<div class="create_container">
 <h1>Create your account</h1>
 <%= form_with model:@user,data: { turbo: false}, url:signup_path do |form|%>
     <% if @user.errors.any? %>
@@ -23,3 +24,4 @@
     <%= form.submit "Create Account",class:"btn btn-primary"%>
     </div>
 <% end %>
+</div>

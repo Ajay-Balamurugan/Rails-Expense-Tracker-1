@@ -1,1 +1,28 @@
-<h1>View all categories</h1>
+<div class="categories-container">
+  <h1>Your Categories</h1>
+
+  <% if @categories.any? %>
+    <table class="payments-table">
+      <thead>
+        <tr>
+          <th class="thead">Name</th>
+          <th class="thead">Budget</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= category.budget %></td>
+            <td><%= link_to "Edit", edit_category_path(category), class: "btn btn-primary" %></td>
+            <td><%= button_to "Delete", delete_category_path(category), method: :delete, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div><%= link_to "Back", root_path, class: "btn btn-dark" %></div>
+  <% else %>
+    <p>No categories found.</p>
+  <% end %>
+</div>
+

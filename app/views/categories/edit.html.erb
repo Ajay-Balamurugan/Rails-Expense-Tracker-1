@@ -1,0 +1,29 @@
+<div class="pay_container">
+<h1>Edit Category</h1>
+
+<%= form_with(model: @category, url: update_category_path(@category), local: true, method: :patch) do |form| %>
+  <% if @category.errors.any? %>
+        <div class="alert alert-danger">
+            <% @category.errors.full_messages.each do |message|%>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "payment_field" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :budget %>
+    <%= form.text_field :budget, class: "payment_field" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Payment", class: "btn btn-primary" %>
+  </div>
+    <br>
+  <div><%= link_to "Back", view_category_path, class: "btn btn-dark" %></div>
+<% end %>
+</div>
