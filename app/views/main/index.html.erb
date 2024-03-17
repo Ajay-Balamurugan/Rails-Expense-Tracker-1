@@ -1,3 +1,20 @@
-<h1>Home page</h1>
 <p class="notice"><%= notice %></p>   
 <p class="alert"><%= alert %></p>
+<% if current_user %>
+    <div class="links">
+        <div><%= link_to 'Add Expense', root_path, class:"link" %></div>
+        <div><%= link_to 'View all Expenses', root_path, class:"link" %></div>
+        <div><%= link_to 'Add category', root_path, class:"link" %></div>
+    </div>
+<% else %>
+    <div class="instructions">
+        <div class="heading">
+            <h1>Expense tracker</h1>
+        </div>
+        <div><h3>1.Keep Track of your expenses</h3></div>
+        <div><h3>2.Add your Expenses</h3></div>
+        <div><h3>3.Manage expense categories and budgets</h3></div>
+        <div><h3>4.Edit and delete your expenses</h3></div>
+    </div>
+<% end %>
+

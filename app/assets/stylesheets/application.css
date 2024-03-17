@@ -43,3 +43,47 @@
   .nav-link-active:hover, .current-user-email:hover{
     color:#c43a30
   }
+
+  .instructions{
+   background-color: #282826;
+   width: fit-content;
+   padding: 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: left;
+   justify-content: center;
+   border-radius: 20px;
+   position: relative;
+   left: 25%;
+   top: 80px;
+  }
+
+  .heading{
+   color: #BF3B37;
+   margin-left: 130px;
+  }
+
+  .link{
+   color: white;
+   text-decoration: none;
+   background-color: #282826;
+   font-size: 1.5rem;
+   padding: 20px;
+   border-radius: 25px;
+   transition: 200ms;
+  }
+
+  .link:hover{
+   border: 2px solid white;
+   background-color: rgba(40, 40, 38, 0.5);
+   box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.75);
+   size: 20px;
+  }
+
+  .links{
+   display: flex;
+   flex-direction: column;
+   gap: 10vh;
+   align-items: center;
+   justify-content: center;
+  }
