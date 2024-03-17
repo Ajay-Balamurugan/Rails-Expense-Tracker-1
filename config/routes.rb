@@ -26,6 +26,10 @@ Rails.application.routes.draw do
   #view payment
   get "view_payment", to:"payments#index"
 
+  #delete payment
+  delete "delete_payment/:id", to:"payments#destroy", as: :delete_payment
+
+
   #add category
   get "add_category", to:"categories#new"
 

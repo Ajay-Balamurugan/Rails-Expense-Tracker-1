@@ -16,6 +16,13 @@ class PaymentsController < ApplicationController
             render :new, status: :unprocessable_entity
         end
     end
+
+    def destroy
+        @payment = current_user.payments.find(params[:id])
+        @payment.destroy
+        redirect_to root_path, notice: "Payment was successfully deleted."
+    end
+      
     
       private
     

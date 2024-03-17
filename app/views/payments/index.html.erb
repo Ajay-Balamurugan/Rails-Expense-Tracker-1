@@ -18,10 +18,8 @@
             <td><%= payment.amount %></td>
             <td><%= payment.date %></td>
             <td><%= payment.category.name %></td>
-            <td>
-              <%= link_to "Edit", root_path, class: "btn btn-primary" %>
-              <%= link_to "Delete", root_path, method: :delete, data: { confirm: "Are you sure you want to delete this expense?" }, class: "btn btn-danger" %>
-            </td>
+            <td><%= link_to "Edit", root_path, class: "btn btn-primary" %></td>
+            <td><%= button_to "Delete", delete_payment_path(payment), method: :delete, class: "btn btn-danger" %></td>
           </tr>
         <% end %>
       </tbody>
