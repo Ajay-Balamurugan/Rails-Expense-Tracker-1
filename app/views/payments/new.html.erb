@@ -1,0 +1,44 @@
+<div class="pay_container">
+<h1>Add New Expense</h1>
+<p class="notice"><%= notice %></p>   
+<p class="alert"><%= alert %></p>
+<%= form_with(model: @payment, url: add_payment_path, local: true) do |form| %>
+
+  <% if @payment.errors.any? %>
+        <div class="alert alert-danger">
+            <% @payment.errors.full_messages.each do |message|%>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"payment_field"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class:"payment_field"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, class:"payment_field" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: "Select category", class:"payment_field" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_method %>
+    <%= form.text_field :payment_method, class:"payment_field"%>
+  </div>
+
+  <div class="field">
+    <%= form.submit "Add Expense", class:"btn btn-success"%>
+  </div>
+<% end %>
+</div>

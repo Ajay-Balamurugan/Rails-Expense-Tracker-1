@@ -18,4 +18,17 @@ Rails.application.routes.draw do
 
   #logout
   delete "logout", to:"sessions#destroy"
+
+  #add payment
+  get "add_payment", to:"payments#new"
+  post "add_payment", to:"payments#create" 
+
+  #view payment
+  get "view_payment", to:"payments#index"
+
+  #add category
+  get "add_category", to:"categories#new"
+
+  #view category
+  get "view_category", to:"categories#index"
 end

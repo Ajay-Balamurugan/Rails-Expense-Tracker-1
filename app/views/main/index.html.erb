@@ -2,9 +2,10 @@
 <p class="alert"><%= alert %></p>
 <% if current_user %>
     <div class="links">
-        <div><%= link_to 'Add Expense', root_path, class:"link" %></div>
-        <div><%= link_to 'View all Expenses', root_path, class:"link" %></div>
-        <div><%= link_to 'Add category', root_path, class:"link" %></div>
+        <div><%= link_to 'Add Payment', add_payment_path, class:"link" %></div>
+        <div><%= link_to 'View all Payments', view_payment_path, class:"link" %></div>
+        <div><%= link_to 'Add category', add_category_path, class:"link" %></div>
+        <div><%= link_to 'View all Categories', view_category_path, class:"link" %></div>
     </div>
 <% else %>
     <div class="instructions">

@@ -52,10 +52,12 @@
    flex-direction: column;
    align-items: left;
    justify-content: center;
+   gap: 10px;
    border-radius: 20px;
    position: relative;
    left: 25%;
    top: 80px;
+   box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.75);
   }
 
   .heading{
@@ -87,3 +89,67 @@
    align-items: center;
    justify-content: center;
   }
+
+.payment_field{
+   color: black;
+   width: 300px;
+}
+
+.alert.alert-danger {
+   background-color: #282826;
+   color: white;
+   border: 3px solid white;
+   padding: 10px;
+   margin-bottom: 15px;
+   border-radius: 20px;
+ }
+
+ .pay_container{
+   background-color: #282826;
+   width: fit-content;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   border-radius: 25px;
+   position: relative;
+   left: 35%;
+   top: 15vh;
+   box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.75);
+ }
+
+ .pay_container .field {
+   margin-bottom: 20px;
+   width: 300px;
+ }
+
+ #payment_category_id{
+   margin-bottom: 20px;
+   width: 300px;
+   color: black;
+ }
+
+ .payments-container{
+   background-color: #282826;
+   width: fit-content;
+   padding: 20px;
+   border-radius: 25px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   position: relative;
+   left: 25%;
+   top: 20vh;
+   box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.75);
+ }
+
+ .payments-table td {
+   padding-left: 50px;
+  }
+
+  .thead{
+   padding-left: 50px;
+  }
+ 

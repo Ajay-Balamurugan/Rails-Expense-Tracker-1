@@ -1,0 +1,33 @@
+<div class="payments-container">
+  <h1>Your Payments</h1>
+
+  <% if @payments.any? %>
+    <table class="payments-table">
+      <thead>
+        <tr>
+          <th class="thead">Name</th>
+          <th class="thead">Amount</th>
+          <th class="thead">Date</th>
+          <th class="thead">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @payments.each do |payment| %>
+          <tr>
+            <td><%= payment.name %></td>
+            <td><%= payment.amount %></td>
+            <td><%= payment.date %></td>
+            <td><%= payment.category.name %></td>
+            <td>
+              <%= link_to "Edit", root_path, class: "btn btn-primary" %>
+              <%= link_to "Delete", root_path, method: :delete, data: { confirm: "Are you sure you want to delete this expense?" }, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No expenses found.</p>
+  <% end %>
+</div>
+
