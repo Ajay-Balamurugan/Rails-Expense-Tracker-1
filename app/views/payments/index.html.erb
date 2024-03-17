@@ -9,6 +9,7 @@
           <th class="thead">Amount</th>
           <th class="thead">Date</th>
           <th class="thead">Category</th>
+          <th class="thead">Payment Method</th>
         </tr>
       </thead>
       <tbody>
@@ -18,7 +19,8 @@
             <td><%= payment.amount %></td>
             <td><%= payment.date %></td>
             <td><%= payment.category.name %></td>
-            <td><%= link_to "Edit", root_path, class: "btn btn-primary" %></td>
+            <td><%= payment.payment_method %></td>
+            <td><%= link_to "Edit", edit_payment_path(payment), class: "btn btn-primary" %></td>
             <td><%= button_to "Delete", delete_payment_path(payment), method: :delete, class: "btn btn-danger" %></td>
           </tr>
         <% end %>

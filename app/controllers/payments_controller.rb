@@ -22,8 +22,20 @@ class PaymentsController < ApplicationController
         @payment.destroy
         redirect_to root_path, notice: "Payment was successfully deleted."
     end
+
+    def edit
+        @payment = current_user.payments.find(params[:id])
+    end
+
+    def update
+        @payment = current_user.payments.find(params[:id])
+        if @payment.update(payment_params)
+          redirect_to root_path, notice: "Payment was successfully updated."
+        else
+          render :edit, status: :unprocessable_entity
+        end
+    end
       
-    
       private
     
       def payment_params

@@ -1,7 +1,5 @@
 <div class="pay_container">
 <h1>Add New Expense</h1>
-<p class="notice"><%= notice %></p>   
-<p class="alert"><%= alert %></p>
 <%= form_with(model: @payment, url: add_payment_path, local: true) do |form| %>
 
   <% if @payment.errors.any? %>

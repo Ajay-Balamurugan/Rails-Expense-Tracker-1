@@ -1,0 +1,44 @@
+<div class="pay_container">
+<h1>Edit Payment</h1>
+
+<%= form_with(model: @payment, url: update_payment_path(@payment), local: true, method: :patch) do |form| %>
+  <% if @payment.errors.any? %>
+        <div class="alert alert-danger">
+            <% @payment.errors.full_messages.each do |message|%>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "payment_field" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, class: "payment_field" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, class: "payment_field" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, current_user.categories, :id, :name, prompt: "Select category", class: "payment_field" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_method %>
+    <%= form.text_field :payment_method, class: "payment_field" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Payment", class: "btn btn-primary" %>
+  </div>
+    <br>
+  <div><%= link_to "Back", view_payment_path, class: "btn btn-secondary" %></div>
+<% end %>
+</div>
