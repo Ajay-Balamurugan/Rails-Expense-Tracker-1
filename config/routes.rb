@@ -46,4 +46,18 @@ Rails.application.routes.draw do
   #update payment
   get "edit_category/:id", to: "categories#edit", as: :edit_category
   patch "update_category/:id", to: "categories#update", as: :update_category
+
+  #create group
+  get "add_group", to:"groups#new"
+  post "add_group", to:"groups#create"
+
+  #view my groups
+  get "view_my_group", to:"groups#my_index"
+
+  #view all groups
+  get "view_all_group", to:"groups#index"
+  post "view_all_group/:id", to:"groups#join", as: :join_group
+
+  #leave group
+  delete "leave_group/:id", to:"groups#destroy", as: :leave_group
 end

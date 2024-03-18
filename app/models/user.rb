@@ -7,4 +7,7 @@ class User < ApplicationRecord
     has_many :payments
     has_many :categories
 
+    has_many :memberships
+    has_many :groups, through: :memberships
+
 end

@@ -234,3 +234,32 @@ field select,option{
    padding-left: 50px;
   }
  
+  .link_group{
+    display: flex;
+    gap: 10vw;
+    position: relative;
+    right: 12vw;
+  }
+
+  .group-info{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .group-info-container{
+    /* background-color: rgba(40, 40, 38, 0.4); */
+    background-color: rgba(40, 40, 38, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.75);
+    width: fit-content;
+    padding: 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    left: 25vw;
+    top: 25vh;
+    box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.75);
+  }

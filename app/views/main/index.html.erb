@@ -1,11 +1,18 @@
 <p class="notice"><%= notice %></p>   
 <p class="alert"><%= alert %></p>
 <% if current_user %>
+    <div class="link_group">
     <div class="links">
         <div><%= link_to 'Add Payment', add_payment_path, class:"link" %></div>
         <div><%= link_to 'View all Payments', view_payment_path, class:"link" %></div>
         <div><%= link_to 'Add category', add_category_path, class:"link" %></div>
         <div><%= link_to 'View all Categories', view_category_path, class:"link" %></div>
+    </div>
+    <div class="links">
+        <div><%= link_to 'Create a Group', add_group_path, class:"link" %></div>
+        <div><%= link_to 'Join a Group', view_all_group_path, class:"link" %></div>
+        <div><%= link_to 'View my Groups', view_my_group_path, class:"link" %></div>
+    </div>
     </div>
 <% else %>
     <div class="instructions">

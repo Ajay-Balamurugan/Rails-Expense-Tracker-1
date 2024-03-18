@@ -1,0 +1,25 @@
+<div class="group-info-container">
+  <h1>My Groups</h1>
+
+  <% if @groups.any? %>
+    <table class="payments-table">
+      <thead>
+        <tr>
+          <th class="thead">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @groups.each do |group| %>
+          <tr>
+            <td><%= group.name %></td>
+            <td><%= button_to "Leave Group", leave_group_path(group), method: :delete, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div><%= link_to "Back", root_path, class: "btn btn-dark" %></div>
+  <% else %>
+    <p>No Groups found.</p>
+  <% end %>
+</div>
+
